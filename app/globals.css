@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar — subtle */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 120, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 120, 0.5);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 255, 224, 0.15);
+  color: #ffffff;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+  body {
+    @apply bg-dark-950 text-dark-200 antialiased;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Terminal-style text cursor */
+  .cursor-terminal::after {
+    content: '▊';
+    @apply text-cyber-500 animate-cursor-blink ml-1;
+  }
+
+  /* Card styles */
+  .card-subtle {
+    @apply relative bg-dark-900/40 border border-dark-800/40 rounded-xl;
+    @apply backdrop-blur-sm transition-all duration-300;
+    @apply hover:border-dark-700/60 hover:bg-dark-900/60;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyber-400 to-cyber-600;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Tag styles */
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-mono;
+    @apply bg-dark-800/60 text-dark-400 border border-dark-700/40;
+    @apply transition-colors duration-200;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .animated-underline {
+    @apply relative;
+  }
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-cyber-500/60;
+    @apply transition-all duration-300 ease-out;
+  }
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+/* Code highlighting overrides */
+pre code.hljs {
+  @apply bg-transparent p-0;
+}
+
+.hljs {
+  @apply bg-dark-900 text-dark-100;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  @apply text-cyber-400;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  @apply text-emerald-400;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  @apply text-dark-500;
+}
+
+/* Prose styles */
+.prose-cyber {
+  --tw-prose-body: #d9d9e3;
+  --tw-prose-headings: #ffffff;
+  --tw-prose-lead: #acacbe;
+  --tw-prose-links: #00FFE0;
+  --tw-prose-bold: #ffffff;
+  --tw-prose-counters: #8e8ea0;
+  --tw-prose-bullets: #8e8ea0;
+  --tw-prose-hr: #2d2d3a;
+  --tw-prose-quotes: #d9d9e3;
+  --tw-prose-quote-borders: #00FFE0;
+  --tw-prose-captions: #8e8ea0;
+  --tw-prose-code: #00FFE0;
+  --tw-prose-pre-code: #e6fffc;
+  --tw-prose-pre-bg: #1a1a24;
+  --tw-prose-th-borders: #4a4a5a;
+  --tw-prose-td-borders: #2d2d3a;
+}
+
+/* Subtle noise texture */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.012;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
+
+/* Page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
