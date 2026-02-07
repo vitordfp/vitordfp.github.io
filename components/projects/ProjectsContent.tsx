@@ -39,7 +39,7 @@ export function ProjectsContent() {
         <ScrollReveal delay={0.4}>
           <div className="mt-16">
             <a
-              href="https://github.com/vitorpinho-dev"
+              href="https://github.com/vitordfp"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm text-dark-400 hover:text-dark-200 transition-colors"

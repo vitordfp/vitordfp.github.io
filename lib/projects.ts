@@ -25,7 +25,7 @@ export const projects: Project[] = [
     title: 'Personal Blog & Portfolio',
     description: 'This website — a minimalist personal space built with Next.js and Tailwind CSS.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    github: 'https://github.com/vitorpinho-dev/personalblog',
+    github: 'https://github.com/vitordfp/personalblog',
     featured: false,
     status: 'in-progress',
   },

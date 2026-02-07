@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail } from 'lucide-react'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 const links = [
-  { icon: Github, href: 'https://github.com/vitorpinho-dev', label: 'GitHub' },
+  { icon: Github, href: 'https://github.com/vitordfp', label: 'GitHub' },
   { icon: Linkedin, href: 'https://linkedin.com/in/vitorpinho', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:hello@vitorpinho.dev', label: 'Email' },
 ]
