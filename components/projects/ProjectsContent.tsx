@@ -89,7 +89,7 @@ function ProjectCard({ project }: { project: Project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 text-dark-500 hover:text-dark-300 transition-colors"
+              className="p-1.5 text-dark-500 hover:text-dark-300 transition-colors duration-300"
               aria-label="View on GitHub"
             >
               <Github className="w-4 h-4" />
