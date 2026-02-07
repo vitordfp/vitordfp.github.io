@@ -21,13 +21,13 @@ export const projects: Project[] = [
     status: 'completed',
   },
   {
-    id: 'personal-blog',
-    title: 'Personal Blog & Portfolio',
-    description: 'This website — a minimalist personal space built with Next.js and Tailwind CSS.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    github: 'https://github.com/vitordfp/personalblog',
-    featured: false,
-    status: 'in-progress',
+    id: 'focus-tracker',
+    title: 'Focus Tracker',
+    description: 'A productivity tracking desktop app that uses the webcam to detect whether you\'re looking at the screen and monitors active application usage to measure focus time.',
+    longDescription: 'Built a desktop productivity tracker that combines webcam-based gaze detection with system-level application monitoring. Uses computer vision to determine screen attention and classifies running applications as productive or distracting, generating daily focus reports and trends. Designed as a personal tool for optimizing deep work sessions.',
+    technologies: ['Tauri', 'Rust', 'TypeScript', 'React', 'MediaPipe'],
+    featured: true,
+    status: 'completed',
   },
 ]
 

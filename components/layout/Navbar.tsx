@@ -11,7 +11,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/bounty', label: 'Bug Bounty' },
 ]
 
 export function Navbar() {
@@ -34,17 +34,17 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         isScrolled
-          ? 'bg-dark-950/80 backdrop-blur-xl border-b border-dark-800/30'
+          ? 'bg-dark-950/80 backdrop-blur-xl border-b border-dark-800/20'
           : 'bg-transparent'
       )}
     >
       <nav className="section-container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="font-mono text-base font-medium text-white">
-            vp<span className="text-cyber-500">.</span>
+          <Link href="/" className="font-mono text-base font-medium text-white hover:text-cyber-400 transition-colors duration-300">
+            vp
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,17 +54,17 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'relative px-4 py-2 text-sm transition-colors',
+                  'relative px-4 py-2 text-sm transition-colors duration-300',
                   pathname === link.href
                     ? 'text-white'
-                    : 'text-dark-400 hover:text-dark-200'
+                    : 'text-dark-500 hover:text-dark-200'
                 )}
               >
                 {link.label}
                 {pathname === link.href && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute bottom-0 left-4 right-4 h-px bg-dark-400"
+                    className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-dark-400 to-transparent"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -94,8 +94,8 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-dark-950/95 backdrop-blur-xl border-b border-dark-800/30"
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden bg-dark-950/95 backdrop-blur-xl border-b border-dark-800/20"
           >
             <div className="section-container py-4 space-y-1">
               {navLinks.map((link, index) => (
@@ -103,12 +103,12 @@ export function Navbar() {
                   key={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Link
                     href={link.href}
                     className={cn(
-                      'block px-4 py-3 rounded-lg text-base transition-colors',
+                      'block px-4 py-3 rounded-lg text-base transition-colors duration-300',
                       pathname === link.href
                         ? 'text-white bg-dark-800/30'
                         : 'text-dark-400 hover:text-white hover:bg-dark-800/20'

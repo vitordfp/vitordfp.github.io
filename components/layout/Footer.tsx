@@ -13,7 +13,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative z-10 border-t border-dark-800/30">
+    <footer className="relative z-10 border-t border-dark-800/20">
       <div className="section-container py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-dark-600">
@@ -27,7 +27,7 @@ export function Footer() {
                 href={social.href}
                 target={social.href.startsWith('mailto') ? undefined : '_blank'}
                 rel={social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                className="text-dark-600 hover:text-dark-400 transition-colors"
+                className="text-dark-600 hover:text-dark-300 transition-colors duration-300"
                 aria-label={social.label}
               >
                 <social.icon className="w-4 h-4" />

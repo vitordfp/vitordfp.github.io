@@ -23,12 +23,12 @@ export interface BugBountyStats {
 
 // ─── UPDATE YOUR BUG BOUNTY STATS HERE ──────────────────────────────────────
 export const bugBountyStats: BugBountyStats = {
-  totalBugsFound: 0,
+  totalBugsFound: 1,
   critical: 0,
   high: 0,
   medium: 0,
   low: 0,
-  informational: 0,
+  informational: 1,
 }
 // ─────────────────────────────────────────────────────────────────────────────
 

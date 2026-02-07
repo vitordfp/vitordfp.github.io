@@ -11,6 +11,8 @@ const experience = [
     company: 'ARMIS Group',
     period: 'Jul 2024 — Present',
     type: 'Full-time',
+    description:
+      'Working on Microsoft security adoption projects. Building and maintaining SOC architectures, from standing up greenfield SOCs to managing established ones. Focus spans operations, detection engineering, and security automation across the Microsoft ecosystem.',
   },
   {
     role: 'Cloud Security Intern',
@@ -18,7 +20,7 @@ const experience = [
     period: 'Feb 2024 — Jun 2024',
     type: 'Internship',
     description:
-      'Cloud Security project focused on securing a simulated organization using Microsoft Defender for Cloud Apps, Defender for Endpoint, Microsoft Sentinel, Intune, and Purview. Implemented security policies and conducted attack simulations.',
+      'Cloud Security project focused on securing a simulated organization using Microsoft Defender for Cloud Apps, Defender for Endpoint, Microsoft Sentinel, Intune, and Purview. Implemented security policies, conducted attack simulations, and performed GDPR compliance analysis.',
   },
 ]
 
@@ -55,18 +57,27 @@ export function AboutContent() {
           <ScrollReveal delay={0.1}>
             <p className="text-dark-400 text-lg leading-relaxed mb-6">
               I&apos;m Vitor Pinho, a Cybersecurity Engineer at ARMIS Group based in
-              Portugal. My path into security was shaped by years of competitive
-              sport — 13 years of kayaking taught me discipline, resilience, and
-              the value of deliberate practice.
+              Portugal. Most of my work revolves around Microsoft security adoption
+              projects — helping organizations build and operate their security
+              infrastructure from the ground up.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15}>
+            <p className="text-dark-400 text-lg leading-relaxed mb-6">
+              I&apos;ve helped create and implement SOCs from scratch and maintained
+              managed SOCs, working across the full stack of security operations — from
+              day-to-day monitoring to improving detection engineering and automating
+              workflows.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <p className="text-dark-400 text-lg leading-relaxed">
-              Today I work at the intersection of cloud security and software
-              engineering, with a growing interest in offensive security and
-              vulnerability research. I believe the best security professionals
-              are the ones who never stop being curious.
+              My path into security was shaped by years of competitive sport — 13 years
+              of kayaking taught me discipline, resilience, and the value of deliberate
+              practice. I believe the best security professionals are the ones who never
+              stop being curious.
             </p>
           </ScrollReveal>
         </div>
@@ -80,7 +91,7 @@ export function AboutContent() {
           <div className="space-y-6">
             {experience.map((exp, i) => (
               <ScrollReveal key={exp.role + exp.period} delay={0.1 * (i + 1)}>
-                <div className="p-6 bg-dark-900/30 border border-dark-800/40 rounded-xl">
+                <div className="p-6 bg-dark-900/30 border border-dark-800/40 rounded-xl hover:border-dark-700/60 transition-all duration-300">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
                     <h3 className="text-white font-medium">{exp.role}</h3>
                     <span className="text-xs text-dark-500 font-mono">
@@ -109,7 +120,7 @@ export function AboutContent() {
           <StaggerContainer className="space-y-3">
             {certifications.map((cert) => (
               <StaggerItem key={cert.id}>
-                <div className="flex items-center justify-between p-4 bg-dark-900/30 border border-dark-800/40 rounded-xl">
+                <div className="flex items-center justify-between p-4 bg-dark-900/30 border border-dark-800/40 rounded-xl hover:border-dark-700/60 transition-all duration-300">
                   <div className="flex items-center gap-3">
                     <Award className="w-4 h-4 text-dark-500 flex-shrink-0" />
                     <div>
@@ -147,7 +158,7 @@ export function AboutContent() {
           <StaggerContainer className="space-y-4">
             {highlights.map((item) => (
               <StaggerItem key={item.title}>
-                <div className="p-6 bg-dark-900/30 border border-dark-800/40 rounded-xl">
+                <div className="p-6 bg-dark-900/30 border border-dark-800/40 rounded-xl hover:border-dark-700/60 transition-all duration-300">
                   <h3 className="text-white font-medium mb-2">{item.title}</h3>
                   <p className="text-dark-500 text-sm leading-relaxed">
                     {item.description}
@@ -166,7 +177,7 @@ export function AboutContent() {
             </p>
             <a
               href="mailto:hello@vitorpinho.dev"
-              className="inline-flex items-center text-sm text-dark-300 hover:text-white transition-colors"
+              className="inline-flex items-center text-sm text-dark-300 hover:text-white transition-colors duration-300"
             >
               hello@vitorpinho.dev
               <ExternalLink className="w-3 h-3 ml-2" />
